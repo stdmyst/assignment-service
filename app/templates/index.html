@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hello, {{ current_user.username }}!</h1>
+    <p><a href="/issue_creation">Create an issue</a></p>
+    <h2>In progress</h2>
+    {% for issue in executor_issues %}
+    <div><p><a href="/api/issues/{{ issue.id }}">{{ issue.issue_name }}</a></p></div>
+    {% endfor %}
+    <h2>Reported by you</h2>
+    {% for issue in reporter_issues %}
+    <div><p><a href="/api/issues/{{ issue.id }}">{{ issue.issue_name }}</a></p></div>
+    {% endfor %}
+{% endblock %}

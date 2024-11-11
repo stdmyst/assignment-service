@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table border='1' style='border-collapse:collapse'>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Date of issue</th>
+        <th scope="col">Date of completion</th>
+        <th scope="col">Body</th>
+        <th scope="col">Reporter</th>
+        <th scope="col">Executor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ issue.issue_name }}</td>
+        <td>{{ issue.date_of_issue.strftime("%Y-%m-%d %H:%M") }}</td>
+        <td>{{ issue.date_of_completion.strftime("%Y-%m-%d %H:%M") }}</td>
+        <td>{{ issue.issue_body }}</td>
+        <td>{{ reporter.username }}</td>
+        <td>{{ executor.username }}</td>
+      </tr>
+{% endblock %}

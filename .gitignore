@@ -1,0 +1,6 @@
+.env
+.flaskenv
+__pycache__
+.venv
+migrations/
+*.db
