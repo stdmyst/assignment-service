@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Администрирование пользователей</h1>
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+</div>
+<br>
+<a class="btn btn-primary" href="/add_user" role="button">Добавить пользователя</a>
+<br>
+{% if users %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <!-- style="word-break: break-all;">-->
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    {% include '_user.html' %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <nav aria-label="Issue navigation">
+            <ul class="pagination">
+                <li class="page-item{% if not prev_url %} disabled{% endif %}">
+                    <a class="page-link" href="{{ prev_url }}">
+                        <span aria-hidden="true">&larr;</span> Next
+                    </a>
+                </li>
+                <li class="page-item{% if not next_url %} disabled{% endif %}">
+                    <a class="page-link" href="{{ next_url }}">
+                        Previous <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

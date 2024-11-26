@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Edit an issue</h1>
+            {{ wtf.quick_form(form) }}
+            {% if deletion_allowed %}
+            <a class="btn btn-outline-danger btn-sm" href="/api/issues/{{ issue_id }}/delete_issue"
+                role="button">Delete issue</a>
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+</div>
+{% endblock %}

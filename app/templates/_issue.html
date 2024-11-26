@@ -1,0 +1,32 @@
+<tr>
+    <td style="width: 200px;">
+        Задача:
+        <br>
+        <a href="/api/issues/{{ issue.id }}"" style=" word-break: break-all;">{{ issue.issue_name }}</a>
+    </td>
+    <td>
+        Постановщик:
+        <br>
+        {{ find_user(issue.reporter_id).username }}
+    </td>
+    <td>
+        Исполнитель:
+        <br>
+        {{ find_user(issue.executor_id).username }}
+    </td>
+    <td>
+        Дата выдачи задания:
+        <br>
+        {{ format_datetime(issue.date_of_issue) }}
+    </td>
+    <td>
+        Ожидаемая дата выполнения:
+        <br>
+        {{ format_datetime(issue.date_of_completion) }}
+    </td>
+    <td>
+        Статус:
+        <br>
+        {{ issue.status }}
+    </td>
+</tr>

@@ -1,0 +1,20 @@
+<tr>
+    <td style="width: 100px;">
+        ID:
+        <br>
+        {{ user.id }}
+    </td>
+    <td>
+        Имя пользователя:
+        <br>
+        {{ user.username }}
+    </td>
+    <td>
+        Email:
+        <br>
+        {{ user.email }}
+    </td>
+    <td>
+        <a class="btn btn-outline-primary btn-sm" href="/api/users/profile/{{ user.id }}" role="button">Edit profile</a>
+    </td>
+</tr>

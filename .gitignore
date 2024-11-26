@@ -1,0 +1,7 @@
+tests/
+migrations/
+__pycache__
+.venv
+.env
+.flaskenv
+*.db

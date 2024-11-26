@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            {% if not flag or flag == "create" %}
+            <h1>Create user</h1>
+            {% elif flag == "edit" %}
+            <h1>Edit profile</h1>
+            {% endif %}
+            {{ wtf.quick_form(form) }}
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
+{% endblock %}

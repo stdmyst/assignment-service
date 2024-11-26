@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% import "bootstrap_wtf.html" as wtf %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <h1>Edit profile #{{ user.id }}</h1>
+            {{ wtf.quick_form(form) }}
+            <a class="btn btn-outline-danger btn-sm" href="/api/users/profile/{{ user.id }}/edit_password"
+                role="button">Reset password</a>
+            <hr>
+            <a class="btn btn-outline-danger btn-sm" href="/api/users/profile/{{ user.id }}/delete_profile"
+                role="button">Delete profile</a>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
+{% endblock %}
