@@ -252,7 +252,7 @@ def administration():
     if not current_user.check_user_right(UserRights.can_admin_users):
         flash('You do not have rights to the specified resource.')
         return redirect(url_for('index'))
-    query = sa.select(User)
+    query = sa.select(User).where(User.username != "admin")
     page = request.args.get('page', 1, type=int)
     users = db.paginate(
         query,
